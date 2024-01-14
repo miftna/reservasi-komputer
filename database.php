@@ -119,6 +119,59 @@ class Database{
 		mysqli_query($this->conn,"delete from pelanggan where id='$id'");
 	}
 
+    // clas tampil pelanggan start
+	function Data_Pelanggan(){
+		$data = mysqli_query($this->koneksi,"select * from tb_pelanggan");
+		while($row = mysqli_fetch_array($data)){
+			$hasil[] = $row;
+		}
+		return $hasil;
+	}
+	// tampil data end
+
+// tambah pelanggan start
+	function Input_data_pelanggan($nama, $alamat, $no_tlpn){
+		mysqli_query($this->koneksi,"insert into tb_pelanggan values ('','$nama','$alamat','$no_tlpn')");
+	}
+// tambah pelanggan end 
+
+// hapus planggan start
+	function Hapus_data_pelanggan($id){
+		mysqli_query($this->koneksi,"delete from tb_pelanggan where Id_pelanggan ='$id'");
+	}
+// hapus planggan start
+
+   // class edit data pelanggan  
+   function Edit_data_pelanggan($id){
+	   $data = mysqli_query($this->koneksi,"select * from tb_pelanggan where Id_pelanggan ='$id'");
+	   while($d = mysqli_fetch_array($data)){
+		   $hasil[] = $d;
+		}
+		return $hasil;
+	}
+	// class edit data pelanggan  end 
+
+// proses update data pelanggan start
+function Update_data_pelanggan($id,$nama, $alamat, $no_tlpn){
+	mysqli_query($this->koneksi,"update tb_pelanggan set nama='$nama', alamat='$alamat', no_hp='$no_tlpn' where Id_pelanggan='$id'");
+}
+// proses update data pelanggan end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // LOGOUT 
 
     function logout() {

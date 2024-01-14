@@ -1,7 +1,7 @@
 <?php 
 include'database.php';
 $db = new Database();
-$data_reservasi = $db->tampil();
+$data_reservasi = $db->Data_Pelanggan();
 ?>
 
 
@@ -89,13 +89,10 @@ $data_reservasi = $db->tampil();
                                 <table id="datatablesSimple" class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Keluhan</th>
-                                            <th>status</th>
-                                            <th>Tanggal</th>
-                                            <!-- <th>Sekolah Asal</th> -->
-                                            <th>Aksi</th>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>alamat</th>
+                                        <th>no telpon</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-group-divider">
@@ -104,12 +101,10 @@ $data_reservasi = $db->tampil();
                                                 foreach($data_reservasi as $row){
                                                 ?>
                                             <tr>
-                                                <td><?php echo $no++; ?></td>
-                                                <td><?php echo $row['nama_pelanggan']; ?></td>
-                                                <td><?php echo $row['keluhan']; ?></td>
-                                                <td><?php echo $row['status']; ?></td>
-                                                <td><?php echo $row['tanggal']; ?></td>
-
+                                                <td><?= $no++?></td>
+                                                <td><?= $data['nama']?></td>
+                                                <td><?= $data['alamat']?></td>
+                                                <td><?= $data['no_hp']?></td>
                                                 
                                                 <td>
                                                         <a href="edit_reservasi.php?id=<?php echo $row['id']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
@@ -150,3 +145,10 @@ $data_reservasi = $db->tampil();
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+
+
+<th>No</th>
+                <th>Nama</th>
+                <th>alamat</th>
+                <th>no telpon</th>
+                <th>aksi</th>
