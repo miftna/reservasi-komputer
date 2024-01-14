@@ -121,7 +121,7 @@ class Database{
 
     // clas tampil pelanggan start
 	function Data_Pelanggan(){
-		$data = mysqli_query($this->koneksi,"select * from tb_pelanggan");
+		$data = mysqli_query($this->conn,"select * from tb_pelanggan");
 		while($row = mysqli_fetch_array($data)){
 			$hasil[] = $row;
 		}
@@ -131,19 +131,19 @@ class Database{
 
 // tambah pelanggan start
 	function Input_data_pelanggan($nama, $alamat, $no_tlpn){
-		mysqli_query($this->koneksi,"insert into tb_pelanggan values ('','$nama','$alamat','$no_tlpn')");
+		mysqli_query($this->conn,"insert into tb_pelanggan values ('','$nama','$alamat','$no_tlpn')");
 	}
 // tambah pelanggan end 
 
 // hapus planggan start
 	function Hapus_data_pelanggan($id){
-		mysqli_query($this->koneksi,"delete from tb_pelanggan where Id_pelanggan ='$id'");
+		mysqli_query($this->conn,"delete from tb_pelanggan where Id_pelanggan ='$id'");
 	}
 // hapus planggan start
 
    // class edit data pelanggan  
    function Edit_data_pelanggan($id){
-	   $data = mysqli_query($this->koneksi,"select * from tb_pelanggan where Id_pelanggan ='$id'");
+	   $data = mysqli_query($this->conn,"select * from tb_pelanggan where Id_pelanggan ='$id'");
 	   while($d = mysqli_fetch_array($data)){
 		   $hasil[] = $d;
 		}
@@ -153,7 +153,7 @@ class Database{
 
 // proses update data pelanggan start
 function Update_data_pelanggan($id,$nama, $alamat, $no_tlpn){
-	mysqli_query($this->koneksi,"update tb_pelanggan set nama='$nama', alamat='$alamat', no_hp='$no_tlpn' where Id_pelanggan='$id'");
+	mysqli_query($this->conn,"update tb_pelanggan set nama='$nama', alamat='$alamat', no_hp='$no_tlpn' where Id_pelanggan='$id'");
 }
 // proses update data pelanggan end
 

@@ -1,7 +1,7 @@
 <?php 
-include'database.php';
-$db = new Database();
-$data_reservasi = $db->Data_Pelanggan();
+include "database.php";
+$database = new Database();
+$data_service = $database->Data_Pelanggan();
 ?>
 
 
@@ -13,7 +13,7 @@ $data_reservasi = $db->Data_Pelanggan();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>hal reservasi</title>
+        <title>edit reservasi</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -89,27 +89,27 @@ $data_reservasi = $db->Data_Pelanggan();
                                 <table id="datatablesSimple" class="table table-striped">
                                     <thead>
                                         <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>alamat</th>
-                                        <th>no telpon</th>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>alamat</th>
+                                            <th>no telpon</th>
+                                            <th>hapus</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-group-divider">
                                             <?php
                                                 $no = 1;
-                                                foreach($data_reservasi as $row){
+                                                foreach($data_service as $row){
                                                 ?>
                                             <tr>
                                                 <td><?= $no++?></td>
-                                                <td><?= $data['nama']?></td>
-                                                <td><?= $data['alamat']?></td>
-                                                <td><?= $data['no_hp']?></td>
-                                                
+                                                <td><?= $row['nama']?></td>
+                                                <td><?= $row['alamat']?></td>
+                                                <td><?= $row['no_hp']?></td>
                                                 <td>
-                                                        <a href="edit_reservasi.php?id=<?php echo $row['id']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
-                                                        <a href="proses_reservasi.php?id=<?php echo $row['id']; ?>&aksi=hapus" class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</a></td>
+                                                    <a href="edit-reserv.php">edit</a>
+                                                    <a href="">hapus</a>
+                                                </td>
                                             </tr>
                                             <?php
                                                 }

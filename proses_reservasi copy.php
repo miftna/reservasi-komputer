@@ -4,7 +4,7 @@ $db = new Database();
 
 $aksi = $_GET["aksi"];
 if($aksi == "tambah"){
-    $db->Input_data_pelanggan($_POST['nama'],$_POST['alamat'],$_POST['no_hp']);
+    $db->inputReservasi($_POST["nama_pelanggan"],$_POST["keluhan"],$_POST["status"],$_POST["tanggal"]);
     header("location:reservasi.php");
 
 }elseif($aksi == "hapus"){ 	
