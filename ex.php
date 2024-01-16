@@ -1,6 +1,7 @@
 <?php 
+include'database.php';
+$db = new Database();
 include "atas-samping.php"
-
 ?>
 
 <div id="layoutSidenav_content">
@@ -14,51 +15,60 @@ include "atas-samping.php"
                             <div class="card-header">
                                 <!-- <i class="fas fa-table me-1"></i> -->
                                 <!-- <button  class="btn btn-primary btn-block"> -->
-                                    <a href="add_pelanggan.php" class="btn btn-primary ">Tambah Data</a>
                                     <!-- Tambah Data
                                 </button> -->
                             </div>
                             <div class="card-body">
-                                
-
-                            <form action="proses_reservasi.php?aksi=tambah" method="post">
+                            <form action="proses_reservasi.php?aksi=update" method="post">
+                                                <?php
+                                                foreach($db->editReservasi($_GET['id']) as $data){
+                                                ?>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputname" type="text" name="nama_pelanggan" placeholder="masukkan nama pelanggan"  required/>
+                                                <input class="form-control" id="inputid" type="hidden" name="id" value="<?php echo $data['id'] ?>"  />
+                                                <label for="inputname">Id Pelanggan</label>
+                                            </div>                                           
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputname" type="text" name="nama_pelanggan" value="<?php echo $data['nama_pelanggan'] ?>"  />
                                                 <label for="inputname">Nama Pelanggan</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputkeluhan" type="text" name="keluhan" placeholder=" keluhan"  required/>
+                                                <input class="form-control" id="inputkeluhan" type="text" name="keluhan" value="<?php echo $data['keluhan'] ?>"  />
                                                 <label for="inputkeluhan">Keluhan</label>
                                             </div>
-                                            
+
                                             <div class="form-floating mb-3">
+                                                    <?php $status = $data['status']; ?>
+
                                                 <!-- <input class="form-control" id="status" type="text" name="status" placeholder="status"  required/> -->
                                                 <select name="status" id="status" class="form-select required">
-                                                            <option value="" disabled selected>Pilih status</option>
-                                                            <option value="menunggu konfirmasi">Menunggu konfirmasi</option>
-                                                            <option value="dikonfirmasi">Dikonfirmasi</option>
-                                                            <option value="selesai">Selesai</option>
+                                                            <!-- <option value="" disabled selected>Pilih status</option> -->
+                                                            <option <?php echo ($status == 'menunggu konfirmasi') ? "selected": "" ?>>Menunggu konfirmasi</option>
+                                                            <option <?php echo ($status == 'dikonfirmasi') ? "selected": "" ?>>Dikonfirmasi</option>
+                                                            <option <?php echo ($status == 'selesai') ? "selected": "" ?>>Selesai</option>
                                                     </select>
                                                 <label for="status">Status</label>
                                             </div>
                                             
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="tanggal" type="datetime-local" name="tanggal" placeholder="tanggal"  required/>
+                                                <input class="form-control" id="tanggal" type="datetime-local" name="tanggal" value="<?php echo $data['tanggal'] ?>"  />
                                                 <label for="tanggal">Tanggal</label>
                                             </div>                                           
                                             <div class="mt-4 mb-0">
                                             <div >
-                                                <button type="submit" name="simpan" class="btn btn-primary btn-block">Simpan</button>
+                                                <button type="submit" name="ubah" class="btn btn-primary btn-block">Ubah</button>
                                                 <!-- <button type="reset" name="batal" class="btn btn-secondary btn-block">Batal</button></div> -->
-		                                    	<a href="index-admin.php" class="btn btn-secondary">Batal</a>
+		                                    	<a href="reservasi.php" class="btn btn-secondary">Batal</a>
                                             </div>
+                                                <?php
+                                                }
+                                                ?>
                                             
-                                        </form>
-                            </div>
+                                        </form>   
+                        </div>
                         </div>
                     </div>
                 </main>
-                
+
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -71,11 +81,4 @@ include "atas-samping.php"
                         </div>
                     </div>
                 </footer>
-            </div>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-    </body>
-
-    </html>
+</div>

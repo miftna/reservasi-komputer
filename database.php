@@ -21,9 +21,9 @@ class Database{
                 $this->setSession($username, "admin");
                 // header("location:free.php");
                 header("location:index-admin.php");
-            } elseif ($data['level'] == "superadmin") {
-                $this->setSession($username, "superadmin");
-                header("location:index-superadmin.php");
+            } elseif ($data['level'] == "pimpinan") {
+                $this->setSession($username, "pimpinan");
+                header("location:index-pimpinan.php");
             } else {
                 header("location:index.php?pesan=gagal");
             }
