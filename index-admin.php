@@ -44,7 +44,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link" href="reservasi.php">
+                            <a class="nav-link" href="./reservasi/reservasi.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
                                 Reservasi
                             </a>

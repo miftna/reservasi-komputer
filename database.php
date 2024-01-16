@@ -4,7 +4,7 @@ class Database{
     var $koneksi;
 
     function __construct() {
-        $this->koneksi = new mysqli("localhost", "root", "", "pbo");
+        $this->koneksi = new mysqli("localhost", "root", "", "mycomputerv1");
         if ($this->koneksi->connect_error) {
             die("Connection failed: " . $this->koneksi->connect_error);
         }
