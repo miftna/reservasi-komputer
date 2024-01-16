@@ -1,7 +1,10 @@
 <?php 
 include'database.php';
 $db = new Database();
-$laporan = $db->tampilLaporan();
+$data_reservasi = $db->tampilReservasi();
+$data_selesai = array_filter($data_reservasi, function ($row) {
+    return $row['status'] == 'selesai';
+});
 ?>
 
 
@@ -34,7 +37,7 @@ $laporan = $db->tampilLaporan();
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="login.php?logout=true">Logout</a></li>
                     </ul>
@@ -46,8 +49,8 @@ $laporan = $db->tampilLaporan();
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <!-- <div class="sb-sidenav-menu-heading">Core</div> -->
-                            <a class="nav-link" href="index-superadmin.php">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index-admin.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -59,9 +62,13 @@ $laporan = $db->tampilLaporan();
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                 Data Pelanggan
                             </a>
-                            <a class="nav-link" href="laporan_reservasi.php">
+                            <a class="nav-link" href="reservasi.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
+                                Reservasi
+                            </a>
+                            <a class="nav-link" href="laporan.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
-                                Laporan Reservasi
+                                Laporan
                             </a>
                         </div>
                     </div>
@@ -77,55 +84,40 @@ $laporan = $db->tampilLaporan();
             <div id="layoutSidenav_content">
                 <main>
                 <div class="container-fluid px-4">
-                        <h1 class="mt-4">Laporan</h1>
+                        <h1 class="mt-4">Reservasi</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Laporan Resrvasii</li>
+                            <li class="breadcrumb-item active">Data Reservasi</li>
                         </ol>                                                
                         <div class="card mb-4">
                             <div class="card-header">
-                                <!-- <i class="fas fa-table me-1"></i> -->
-                                <!-- <button  class="btn btn-primary btn-block"> -->
-                                    <!-- <a href="add-reserv.php" class="btn btn-primary ">Tambah Data</a> -->
-                                    <!-- Tambah Data
-                                </button> -->
+                                <button class="btn btn-primary" onclick="printLaporan()">Cetak Laporan</button>
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple" class="table table-striped">
+                                <table  class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Deskripsi Reservasi</th>
-                                            <th>Biaya</th>
+                                            <th>Deskripsi Rseservasi</th>
                                             <th>status</th>
                                             <th>Tanggal</th>
-                                            <!-- <th>Sekolah Asal</th> -->
-                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody >
                                             <?php
                                                 $no = 1;
-                                                foreach($laporan as $row){
+                                                foreach($data_selesai as $row){
                                                 ?>
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $row['nama_pelanggan']; ?></td>
-                                                <td><?php echo $row['desk_reservasi']; ?></td>
-                                                <td><?php echo $row['biaya']; ?></td>
+                                                <td><?php echo $row['keluhan']; ?></td>
                                                 <td><?php echo $row['status']; ?></td>
                                                 <td><?php echo $row['tanggal']; ?></td>
-
-                                                
-                                                <td>
-                                                        <!-- <a href="edit_reservasi.php?id=<?php echo $row['id']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a> -->
-                                                        <a href="proses_reservasi.php?id=<?php echo $row['id']; ?>&aksi=hapusLaporan" class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</a></td>
-                                            </tr>
                                             <?php
                                                 }
                                                 ?>
-                                        <!-- <p>Total: <?php echo mysqli_num_rows($d) ?></p> -->
+                                        
 
                                     </tbody>
                                 </table>
@@ -147,6 +139,11 @@ $laporan = $db->tampilLaporan();
                 </footer>
             </div>
         </div>
+        <script>
+            function printLaporan() {
+                window.print();
+            }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>

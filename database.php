@@ -44,7 +44,7 @@ class Database{
         return $this->conn->query($query);
     }
 
-    function tampil() {
+    function tampilReservasi() {
         $data =mysqli_query($this->conn, "SELECT * FROM reservasi");
         while($dat=mysqli_fetch_array($data)) {
             $hasil [] = $dat;
@@ -118,6 +118,14 @@ class Database{
     function hapusPelanggan($id){
 		mysqli_query($this->conn,"delete from pelanggan where id='$id'");
 	}
+
+    function tampilToko() {
+        $data =mysqli_query($this->conn, "SELECT * FROM profil_toko");
+        while($dat=mysqli_fetch_array($data)) {
+            $hasil [] = $dat;
+        }
+        return $hasil;
+    }
 
     // LOGOUT 
 

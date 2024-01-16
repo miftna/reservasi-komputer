@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>Dashboard Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -16,7 +16,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" ></a>
+            <a class="navbar-brand ps-3" >Reservasi Komputer</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -46,11 +46,19 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+                            <a class="nav-link" href="data_toko.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
+                                Data Toko
+                            </a>
+                            <a class="nav-link" href="data_pelanggan.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Data Pelanggan
+                            </a>
                             <a class="nav-link" href="reservasi.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
                                 Reservasi
                             </a>
-                            <a class="nav-link" href="laporan.php">
+                            <a class="nav-link" href="report.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
                                 Laporan
                             </a>
@@ -80,7 +88,7 @@
                                         <i class="fas fa-chart-area me-1"></i>
                                         Area Chart Example
                                     </div>
-                                    <div class="card-body bg-primary"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                                 </div>
                             </div>
                             <div class="col-xl-6">
@@ -89,7 +97,7 @@
                                         <i class="fas fa-chart-bar me-1"></i>
                                         Bar Chart Example
                                     </div>
-                                    <div class="card-body bg-primary"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                                 </div>
                             </div>
                         </div>

@@ -42,10 +42,20 @@ $db = new Database();
                                                 <input class="form-control" id="inputkeluhan" type="text" name="keluhan" value="<?php echo $data['keluhan'] ?>"  />
                                                 <label for="inputkeluhan">Keluhan</label>
                                             </div>
+
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="status" type="text" name="status" value="<?php echo $data['status'] ?>"  />
+                                                    <?php $status = $data['status']; ?>
+
+                                                <!-- <input class="form-control" id="status" type="text" name="status" placeholder="status"  required/> -->
+                                                <select name="status" id="status" class="form-select required">
+                                                            <!-- <option value="" disabled selected>Pilih status</option> -->
+                                                            <option <?php echo ($status == 'menunggu konfirmasi') ? "selected": "" ?>>Menunggu konfirmasi</option>
+                                                            <option <?php echo ($status == 'dikonfirmasi') ? "selected": "" ?>>Dikonfirmasi</option>
+                                                            <option <?php echo ($status == 'selesai') ? "selected": "" ?>>Selesai</option>
+                                                    </select>
                                                 <label for="status">Status</label>
                                             </div>
+                                            
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="tanggal" type="datetime-local" name="tanggal" value="<?php echo $data['tanggal'] ?>"  />
                                                 <label for="tanggal">Tanggal</label>

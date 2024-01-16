@@ -29,10 +29,18 @@
                                                 <input class="form-control" id="inputkeluhan" type="text" name="keluhan" placeholder=" keluhan"  required/>
                                                 <label for="inputkeluhan">Keluhan</label>
                                             </div>
+                                            
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="status" type="text" name="status" placeholder="status"  required/>
+                                                <!-- <input class="form-control" id="status" type="text" name="status" placeholder="status"  required/> -->
+                                                <select name="status" id="status" class="form-select required">
+                                                            <option value="" disabled selected>Pilih status</option>
+                                                            <option value="menunggu konfirmasi">Menunggu konfirmasi</option>
+                                                            <option value="dikonfirmasi">Dikonfirmasi</option>
+                                                            <option value="selesai">Selesai</option>
+                                                    </select>
                                                 <label for="status">Status</label>
                                             </div>
+                                            
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="tanggal" type="datetime-local" name="tanggal" placeholder="tanggal"  required/>
                                                 <label for="tanggal">Tanggal</label>

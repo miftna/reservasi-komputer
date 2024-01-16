@@ -51,6 +51,14 @@ $laporan = $db->tampilLaporan();
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+                            <a class="nav-link" href="data_toko.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
+                                Data Toko
+                            </a>
+                            <a class="nav-link" href="data_pelanggan.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Data Pelanggan
+                            </a>
                             <a class="nav-link" href="reservasi.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
                                 Reservasi
@@ -99,7 +107,7 @@ $laporan = $db->tampilLaporan();
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody >
+                                    <tbody class="table-group-divider">
                                             <?php
                                                 $no = 1;
                                                 foreach($laporan as $row){

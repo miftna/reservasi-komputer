@@ -46,8 +46,8 @@ $data_pelanggan = $db->tampilPelanggan();
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <!-- <div class="sb-sidenav-menu-heading">Core</div> -->
-                            <a class="nav-link" href="index-superadmin.php">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index-admin.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -59,9 +59,13 @@ $data_pelanggan = $db->tampilPelanggan();
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                 Data Pelanggan
                             </a>
-                            <a class="nav-link" href="laporan_reservasi.php">
+                            <a class="nav-link" href="reservasi.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
+                                Reservasi
+                            </a>
+                            <a class="nav-link" href="laporan.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
-                                Laporan Reservasi
+                                Laporan
                             </a>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 <?php 
 include'database.php';
 $db = new Database();
-$data_reservasi = $db->tampil();
+$data_reservasi = $db->tampilReservasi();
 ?>
 
 
@@ -50,6 +50,14 @@ $data_reservasi = $db->tampil();
                             <a class="nav-link" href="index-admin.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
+                            </a>
+                            <a class="nav-link" href="data_toko.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
+                                Data Toko
+                            </a>
+                            <a class="nav-link" href="data_pelanggan.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Data Pelanggan
                             </a>
                             <a class="nav-link" href="reservasi.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
@@ -107,7 +115,12 @@ $data_reservasi = $db->tampil();
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $row['nama_pelanggan']; ?></td>
                                                 <td><?php echo $row['keluhan']; ?></td>
-                                                <td><?php echo $row['status']; ?></td>
+                                                <td>
+                                                    <span style="background-color: <?php echo ($row['status'] == 'menunggu konfirmasi') ? 'var(--bs-danger)' : (($row['status'] == 'dikonfirmasi') ? 'var(--bs-warning)' : 'var(--bs-success)'); ?>; color: white; border-radius: 4px; padding: 4px; font-weight: bold;">
+                                                        <?php echo $row['status']; ?>
+                                                    </span>
+                                                </td>
+                                                <!-- <td><?php echo $row['status']; ?></td> -->
                                                 <td><?php echo $row['tanggal']; ?></td>
 
                                                 
