@@ -50,10 +50,12 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
                                 Data Toko
                             </a>
+
                             <a class="nav-link" href="data_pelanggan.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                 Data Pelanggan
                             </a>
+
                             <a class="nav-link" href="reservasi.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
                                 Reservasi

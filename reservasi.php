@@ -63,7 +63,7 @@ $data_reservasi = $db->tampilReservasi();
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
                                 Reservasi
                             </a>
-                            <a class="nav-link" href="laporan.php">
+                            <a class="nav-link" href="report.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
                                 Laporan
                             </a>
