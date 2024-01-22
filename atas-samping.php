@@ -1,4 +1,6 @@
-
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,30 +48,34 @@
                                 Dashboard
                             </a>
                             
-                            <a class="nav-link" href="data_toko.php">
+                            <a class="nav-link" href="pelanggan-data.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Pelanggan
+                            </a>
+
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
                                 Teknisi
                             </a>
 
-                            <a class="nav-link" href="data_pelanggan.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
-                                Data Pelanggan
-                            </a>
 
-                            <a class="nav-link" href="reservasi.php">
+                            <a class="nav-link" href="add-reserv.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-computer"></i></div>
-                                Reservasi
+                                 Data Service
                             </a>
                             <a class="nav-link" href="report.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
                                 Laporan
+                            </a>
+                            <a class="nav-link" href="report.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
+                                Belom tau
                             </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small"></div>
                         <?php
-                        session_start();
                         echo "<h5>Welcome ".$_SESSION['username']."</h5>";
                         ?>
                     </div>

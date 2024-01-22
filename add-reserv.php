@@ -6,18 +6,12 @@ include "atas-samping.php"
 <div id="layoutSidenav_content">
                 <main>
                 <div class="container-fluid px-4">
-                        <h1 class="mt-4">Pelanggan</h1>
+                        <h1 class="mt-4">Tambah reserpasi</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Data Pelanggan</li>
+                            <li class="breadcrumb-item active">Reservasi</li>
                         </ol>                                                
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <!-- <i class="fas fa-table me-1"></i> -->
-                                <!-- <button  class="btn btn-primary btn-block"> -->
-                                    <a href="add_pelanggan.php" class="btn btn-primary ">Tambah Data</a>
-                                    <!-- Tambah Data
-                                </button> -->
-                            </div>
+            
                             <div class="card-body">
                                 
 

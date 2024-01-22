@@ -40,9 +40,9 @@ include "atas-samping.php"
                                             </div>                                           
                                             <div class="mt-4 mb-0">
                                             <div >
-                                                <button type="submit" name="simpan" class="btn btn-primary btn-block">Simpan</button>
+                                                <button type="submit" name="simpan" class="btn btn-primary btn-block" onclick="return confirm('Anda yakin ingin menambah data ini?')">Simpan</button>
                                                 <!-- <button type="reset" name="batal" class="btn btn-secondary btn-block">Batal</button></div> -->
-		                                    	<a href="data_pelanggan.php" class="btn btn-secondary">Batal</a>
+		                                    	<a href="data_pelanggan.php" class="btn btn-secondary" onclick="return confirm('Anda yakin ingin Membatalkan nya?')">Batal</a>
                                             </div>
                                             
                                         </form>
