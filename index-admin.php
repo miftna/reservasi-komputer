@@ -2,6 +2,7 @@
 include 'database.php';
 $db = new Database();
 $data_reservasi = $db->tampilReservasi();
+<<<<<<< HEAD
 include "atas-samping.php";
 ?>
             <div id="layoutSidenav_content">
@@ -16,6 +17,28 @@ include "atas-samping.php";
                         <a href="reservasi.php" class="btn btn-sm btn-primary">Show All</a>
                         <div class="row">
                         <table id="datatablesSimple" class="table table-striped">
+=======
+include "atas-samping.php"
+
+?>
+            <div id="layoutSidenav_content">
+                <main>
+                <div class="container-fluid px-4">
+                        <h1 class="mt-4">Home</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">sistem informasi reservasi komputer</li>
+                        </ol>                                                
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <!-- <i class="fas fa-table me-1"></i> -->
+                                <!-- <button  class="btn btn-primary btn-block"> -->
+                                    <a href="reservasi.php" class="btn btn-primary ">Lihat semua</a>
+                                    <!-- Tambah Data
+                                </button> -->
+                            </div>
+                            <div class="card-body">
+                                <table  class="table table-striped">
+>>>>>>> 3d9c1148684407c68d59e9d2e1434e86c3221de1
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -25,7 +48,11 @@ include "atas-samping.php";
                                             <th>Tanggal</th>
                                         </tr>
                                     </thead>
+<<<<<<< HEAD
                                     <tbody class="table-group-divider">
+=======
+                                    <tbody >
+>>>>>>> 3d9c1148684407c68d59e9d2e1434e86c3221de1
                                             <?php
                                                 $no = 1;
                                                 foreach($data_reservasi as $row){
@@ -49,6 +76,22 @@ include "atas-samping.php";
 
                                     </tbody>
                                 </table>
+<<<<<<< HEAD
+=======
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+>>>>>>> 3d9c1148684407c68d59e9d2e1434e86c3221de1
                         </div>
                     </div>
                 </main>
