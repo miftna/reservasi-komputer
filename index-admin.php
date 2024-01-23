@@ -2,7 +2,6 @@
 include 'database.php';
 $db = new Database();
 $data_reservasi = $db->tampilReservasi();
-<<<<<<< HEAD
 include "atas-samping.php";
 ?>
             <div id="layoutSidenav_content">
@@ -17,11 +16,8 @@ include "atas-samping.php";
                         <a href="reservasi.php" class="btn btn-sm btn-primary">Show All</a>
                         <div class="row">
                         <table id="datatablesSimple" class="table table-striped">
-=======
-include "atas-samping.php"
 
-?>
-            <div id="layoutSidenav_content">
+                        <div id="layoutSidenav_content">
                 <main>
                 <div class="container-fluid px-4">
                         <h1 class="mt-4">Home</h1>
@@ -38,7 +34,6 @@ include "atas-samping.php"
                             </div>
                             <div class="card-body">
                                 <table  class="table table-striped">
->>>>>>> 3d9c1148684407c68d59e9d2e1434e86c3221de1
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -48,11 +43,8 @@ include "atas-samping.php"
                                             <th>Tanggal</th>
                                         </tr>
                                     </thead>
-<<<<<<< HEAD
                                     <tbody class="table-group-divider">
-=======
                                     <tbody >
->>>>>>> 3d9c1148684407c68d59e9d2e1434e86c3221de1
                                             <?php
                                                 $no = 1;
                                                 foreach($data_reservasi as $row){
@@ -76,8 +68,6 @@ include "atas-samping.php"
 
                                     </tbody>
                                 </table>
-<<<<<<< HEAD
-=======
                             </div>
                         </div>
                     </div>
@@ -91,7 +81,6 @@ include "atas-samping.php"
                                 &middot;
                                 <a href="#">Terms &amp; Conditions</a>
                             </div>
->>>>>>> 3d9c1148684407c68d59e9d2e1434e86c3221de1
                         </div>
                     </div>
                 </main>
