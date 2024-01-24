@@ -1,6 +1,8 @@
 <?php
-include "database.php";
-include "header.php";
+include "db/database.php";
+// include "database.php";
+include "layout/header.php"
+// include "header.php";
 ?>
 <main>
     <div class="container-fluid px-4">
@@ -17,7 +19,7 @@ include "header.php";
         </div>
 
             <div class="card-body">
-                <table id="datatablesSimple">
+                <table id="datatablesSimple" class="table table-striped">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -56,5 +58,5 @@ include "header.php";
 </main>
 
 <?php
-include "footer.php";
+include "layout/footer.php";
 ?>

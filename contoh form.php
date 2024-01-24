@@ -1,13 +1,13 @@
 <?php
-include "db/database.php";
-include "layout/header.php";
+include "database.php";
+include "header.php";
 ?>
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Dashboard</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index-admin.php">Dashboard</a></li>
-            <li class="breadcrumb-item active">tambah pelanggan</li>
+            <li class="breadcrumb-item active">Tampil data</li>
         </ol>
 
         <div class="card mb-4">
@@ -24,12 +24,12 @@ include "layout/header.php";
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
         
-                            <input type="text" class="form-control" name="nama" id="nama" required>
+                            <input type="text" class="form-control" name="nama" id="nama">
                         </div>
 
                         <!-- jenis kelamin  -->
                         <div class="mb-3">
-                            <label for="jenis_kelamin" class="form-check-inline" required>Jenis kelamin</label>
+                            <label for="jenis_kelamin" class="form-check-inline">Jenis kelamin</label>
                                 <div class="form-check form-check-inline">                                                  
                                     <input type="radio" name="jenis_kelamin" value="Laki-laki" class="form-check-input" checked>
                                     <label for="jenis_kelamin_l" class="form-check-label">Laki-laki</label>
@@ -45,29 +45,28 @@ include "layout/header.php";
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                 
-                            <input type="text" name="alamat" id="alamat" class="form-control" required>
+                            <input type="text" name="alamat" id="alamat" class="form-control">
                         </div>
 
                         <!-- nomer telpon  -->
                         <div class="mb-3">
                             <label for="no_hp" class="form-label">No telpon</label>
                 
-                            <input type="text" name="no_hp" id="no_hp" class="form-control" required>
+                            <input type="text" name="no_hp" id="no_hp" class="form-control">
                         </div>
 
                         <!-- email  -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Email </label>
                     
-                            <input type="text" name="email" id="email" class="form-control" aria-describedby="emailHelp" required>
+                            <input type="text" name="email" id="email" class="form-control" aria-describedby="emailHelp">
                     
                         </div>
 
                         <!-- nama -->
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Perangkat</label>
-                            <select class="form-select" name="nama_perangkat" id="nama_perangkat" required>
-                                <option selected>pilih perangkat</option>
+                            <select class="form-select" name="nama_perangkat" id="nama_perangkat">
                                 <option value="komputer">komputer</option>
                                 <option value="laptop">laptop</option>
                                 <option value="printer">printer</option>
@@ -78,14 +77,14 @@ include "layout/header.php";
                         <div class="mb-3">
                             <label for="model" class="form-label">Model</label>
         
-                            <input type="text" class="form-control" name="model" id="model" required>
+                            <input type="text" class="form-control" name="model" id="model">
                         </div>
 
                         <!-- tanggal masuk -->
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Tanggal Masuk</label>
 
-                            <input type="date" name="tanggal_masuk" id="tanggal_masuk" class="form-control" required>
+                            <input type="date" name="tanggal_masuk" id="tanggal_masuk" class="form-control">
                         </div>
                         <!-- <div class="col-sm-12 col-md-6 col-xl-4">
                             <div class="h-100 bg-light rounded p-4">
@@ -134,5 +133,5 @@ include "layout/header.php";
 </main>
 
 <?php
-include "layout/footer.php";
+include "footer.php";
 ?>

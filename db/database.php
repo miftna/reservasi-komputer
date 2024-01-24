@@ -255,7 +255,31 @@ function Update_data_service($id,$nama_perangkat,$model,$tanggal_masuk,$deskrips
 		// }
 
 
-		function Input_data_reservasi($nama, $jenis_kelamin, $alamat, $no_tlpn, $email,$nama_perangkat,$model,$tanggal_masuk,$deskripsi){
+		function Tampil_data_pelanggan_service(){
+			$data = mysqli_query($this->koneksi,
+			"SELECT * FROM tb_pelanggan
+			INNER JOIN tb_service ON tb_pelanggan.id_service=tb_service.id_service;");
+			while($row = mysqli_fetch_array($data)){
+				$hasil[] = $row;
+			}
+			return $hasil;
+			// tampil teknisi end 
+		}
+		// opsi 2 dulu 😂😂😂😀
+		// function Tampil_data_pelanggan_service(){
+		// 	$data = mysqli_query($this->koneksi,
+		// 	"SELECT tb_pelanggan.Id_pelanggan, tb_pelanggan.nama, tb_pelanggan.jenis_kelamin, tb_pelanggan.alamat,tb_pelanggan.no_hp, tb_pelanggan.email,
+		// 	tb_service.nama_perangkat,tb_service.model,tb_service.tanggal_masuk, tb_service.deskripsi
+		// 	FROM tb_pelanggan
+		// 	LEFT JOIN tb_service ON tb_pelanggan.Id_pelanggan=tb_service.id_service;");
+		// 	while($row = mysqli_fetch_array($data)){
+		// 		$hasil[] = $row;
+		// 	}
+		// 	return $hasil;
+		// 	// tampil teknisi end 
+		// }
+
+		function Input_data_pelanggan_service($nama, $jenis_kelamin, $alamat, $no_tlpn, $email,$nama_perangkat,$model,$tanggal_masuk,$deskripsi){
 			mysqli_query($this->koneksi,"insert into tb_pelanggan values ('','$nama','$jenis_kelamin','$alamat','$no_tlpn','$email')");
 			mysqli_query($this->koneksi,"insert into tb_service values ('','$nama_perangkat','$model','$tanggal_masuk','$deskripsi')");
 			

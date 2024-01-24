@@ -1,5 +1,5 @@
 <?php
-include "db/database.php";
+include "../db/database.php";
 
 ?>
 <!-- Sign In Start -->

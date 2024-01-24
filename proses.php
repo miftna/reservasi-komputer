@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "database.php";
+include "db/database.php";
 $database = new database();
 $db = new Database();
 
@@ -47,10 +47,13 @@ if($aksi == "tambah"){
 }elseif($aksi == "updateservis"){
     $database->Update_data_service($_POST['id_service'],$_POST['nama_perangkat'],$_POST['model'],$_POST['tanggal_masuk'],$_POST['deskripsi']);
     header('location:service-data.php');
+
+
+    // proses input data pelanggan dan service masuk
 }elseif($aksi == "tambahreservasi"){
-    $database->Input_data_reservasi($_POST['nama'],$_POST['jenis_kelamin'],$_POST['alamat'],$_POST['no_hp'],$_POST['email'],
+    $database->Input_data_pelanggan_service($_POST['nama'],$_POST['jenis_kelamin'],$_POST['alamat'],$_POST['no_hp'],$_POST['email'],
     $_POST['nama_perangkat'],$_POST['model'],$_POST['tanggal_masuk'],$_POST['deskripsi']);
-    header('location:service-data.php');
+    header('location:pelanggan-service-data.php');
 }
 
 ?>
