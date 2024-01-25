@@ -41,11 +41,8 @@ include "layout/header.php";
                                 <td><?= $data['jenis_kelamin']?></td>
                                 <td><?= $data['no_hp']?></td>
                                 <td><?= $data['email']?></td>
-                                <td>
-                                    <a href="pelanggan-edit.php?Id_pelanggan=<?= $data['Id_pelanggan']; ?>&aksi=edit" class="btn btn-success">Edit</a>
-                                    <a href="proses.php?Id_pelanggan=<?= $data['Id_pelanggan']; ?>&aksi=hapus"
-                                            onclick="return confirm('Anda yakin ingin menghapus data ini?')" class="btn btn-danger">Hapus</a>
-                                </td>
+
+                                <!-- aksi  nya -->
                             </tr>
                             
                         </tbody>

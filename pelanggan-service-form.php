@@ -1,6 +1,10 @@
 <?php
 include "db/database.php";
+$database = new Database();
+$data_pelanggan = $database->Data_Pelanggan();
+$data_teknisi= $database->Data_teknisi();
 include "layout/header.php";
+
 ?>
 <main>
     <div class="container-fluid px-4">
@@ -21,25 +25,25 @@ include "layout/header.php";
                <form action="proses.php?aksi=tambahreservasi" method="post">
                     <table>
                         <!-- nama -->
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama</label>
-        
-                            <input type="text" class="form-control" name="nama" id="nama" required>
-                        </div>
 
-                        <!-- jenis kelamin  -->
                         <div class="mb-3">
-                            <label for="jenis_kelamin" class="form-check-inline" required>Jenis kelamin</label>
-                                <div class="form-check form-check-inline">                                                  
-                                    <input type="radio" name="jenis_kelamin" value="Laki-laki" class="form-check-input" checked>
-                                    <label for="jenis_kelamin_l" class="form-check-label">Laki-laki</label>
-                                </div>
-
-                                <div class="form-check form-check-inline">  
-                                    <input type="radio" name="jenis_kelamin" value="Perempuan" class="form-check-input">
-                                    <label for="Jenis_kelamin" class="form-check-label">Perempuan</label>
-                                </div>
-                        </div>
+                        <label for="nama" class="form-label">Nama Pelanggan</label>
+                        <select class="form-select" name="id_pelanggan" id="id_pelanggan  ">
+                            <option >pilih Pelanggan</option>
+                            <?php
+                            foreach($data_pelanggan as $data){
+                            ?>
+                            <option value="<?php
+                             $data['id_pelanggan']
+                              ?>">
+                              <?php
+                               echo $data['nama'] 
+                               ?></option>
+                            <?php
+                         }
+                         ?>
+                        </select>
+                    </div>
 
                         <!-- alamat -->
                         <div class="mb-3">
@@ -63,16 +67,24 @@ include "layout/header.php";
                     
                         </div>
 
-                        <!-- nama -->
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Perangkat</label>
-                            <select class="form-select" name="nama_perangkat" id="nama_perangkat" required>
-                                <option selected>pilih perangkat</option>
-                                <option value="komputer">komputer</option>
-                                <option value="laptop">laptop</option>
-                                <option value="printer">printer</option>
-                            </select>
-                        </div>
+                         <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Teknisi</label>
+                        <select class="form-select" name="id_teknisi" id="id_teknisi  ">
+                            <option value="">pilih teknisi</option>
+                            <?php
+                            foreach($data_teknisi as $data){
+                            ?>
+                            <option value="<?php
+                             $data['id_teknisi']
+                              ?>">
+                              <?php
+                               echo $data['nama_teknisi'] 
+                               ?></option>
+                            <?php
+                         }
+                         ?>
+                        </select>
+                    </div>
 
                         <!-- model -->
                         <div class="mb-3">
@@ -80,42 +92,7 @@ include "layout/header.php";
         
                             <input type="text" class="form-control" name="model" id="model" required>
                         </div>
-
-                        <!-- tanggal masuk -->
-                        <div class="mb-3">
-                            <label for="alamat" class="form-label">Tanggal Masuk</label>
-
-                            <input type="date" name="tanggal_masuk" id="tanggal_masuk" class="form-control" required>
-                        </div>
-                        <!-- <div class="col-sm-12 col-md-6 col-xl-4">
-                            <div class="h-100 bg-light rounded p-4">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h6 class="mb-0">Calender</h6>
-                                    <a href="">Show All</a>
-                                </div>
-                                <div id="calender"></div>
-                            </div>
-                        </div> -->
-                        <!-- teknisi -->
-                        <!-- <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Teknisi</label>
-                            <select class="form-select" name="id_teknisi" id="id_teknisi  ">
-                                <option value="">pilih teknisi</option>
-                                <?php
-                                // foreach($data_teknisi as $data){
-                                ?>
-                                <option value="<?php
-                                //  $data['id_teknisi']
-                                ?>">
-                                <?php
-                                //    $data['nama_teknisi'] 
-                                ?></option>
-                                <?php
-                            //  }
-                            ?>
-                            </select>
-                        </div> -->
-
+                        
                         <!-- deskripsi -->
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Deskripsi</label>

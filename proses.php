@@ -51,8 +51,8 @@ if($aksi == "tambah"){
 
     // proses input data pelanggan dan service masuk
 }elseif($aksi == "tambahreservasi"){
-    $database->Input_data_pelanggan_service($_POST['nama'],$_POST['jenis_kelamin'],$_POST['alamat'],$_POST['no_hp'],$_POST['email'],
-    $_POST['nama_perangkat'],$_POST['model'],$_POST['tanggal_masuk'],$_POST['deskripsi']);
+    $database->Input_data_pelanggan_service($_POST['id_pelanggan'],$_POST['alamat'],$_POST['no_hp'],$_POST['email'],
+    $_POST['id_teknisi'],$_POST['model'],$_POST['deskripsi']);
     header('location:pelanggan-service-data.php');
 }
 

@@ -1,6 +1,7 @@
 <?php
 include "database.php";
 include "header.php";
+$db->
 ?>
 <main>
     <div class="container-fluid px-4">
@@ -31,12 +32,12 @@ include "header.php";
                         <div class="mb-3">
                             <label for="jenis_kelamin" class="form-check-inline">Jenis kelamin</label>
                                 <div class="form-check form-check-inline">                                                  
-                                    <input type="radio" name="jenis_kelamin" value="Laki-laki" class="form-check-input" checked>
+                                    <input type="radio" name="jenis_kelamin1" value="Laki-laki" class="form-check-input" checked>
                                     <label for="jenis_kelamin_l" class="form-check-label">Laki-laki</label>
                                 </div>
 
                                 <div class="form-check form-check-inline">  
-                                    <input type="radio" name="jenis_kelamin" value="Perempuan" class="form-check-input">
+                                    <input type="radio" name="jenis_kelamin2" value="Perempuan" class="form-check-input">
                                     <label for="Jenis_kelamin" class="form-check-label">Perempuan</label>
                                 </div>
                         </div>

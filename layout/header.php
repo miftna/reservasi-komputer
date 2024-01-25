@@ -1,3 +1,4 @@
+
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index-admin.php">Service komputer</a>
@@ -143,7 +144,10 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <?php
+                        // session_start();
+                        // echo "<h5>Welcome ".$_SESSION['username']."</h5>";
+                        ?>
                     </div>
                 </nav>
             </div>
