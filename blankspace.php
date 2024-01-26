@@ -1,7 +1,10 @@
 <?php
 include "db/database.php";
+$database = new Database();
+$data_pelanggan = $database->Data_Pelanggan();
+$data_teknisi= $database->Data_teknisi();
 include "layout/header.php";
-// $db->
+
 ?>
 <main>
     <div class="container-fluid px-4">

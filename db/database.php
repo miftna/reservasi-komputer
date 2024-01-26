@@ -283,7 +283,7 @@ function Update_data_service($id,$nama_perangkat,$model,$tanggal_masuk,$deskrips
 		function Input_data_pelanggan_service($nama,  $alamat, $no_tlpn, $email,$nama_teknisi,$model,$deskripsi){
 			mysqli_query($this->koneksi,"insert into tb_pelanggan values ('','$nama','$jenis_kelamin','$alamat','$no_tlpn','$email')");
 			mysqli_query($this->koneksi,"insert into tb_service values ('','$nama_perangkat','$model','$deskripsi')");
-			mysqli_query($this->koneksi,"insert into tb_teknisi values ('','$nama_teknisi')");
+		
 			
 		}
 }
