@@ -86,7 +86,7 @@ class database{
 	// tampil data end
 
 // tambah pelanggan start
-	function Input_data_pelanggan($nama,  $alamat, $no_tlpn, $email){
+	function Input_data_pelanggan($nama,  $alamat, $no_tlpn, $email, $jenis_kelamin){
 		mysqli_query($this->koneksi,"insert into tb_pelanggan values ('','$nama','$jenis_kelamin','$alamat','$no_tlpn','$email')");
 	}
 // tambah pelanggan end 
